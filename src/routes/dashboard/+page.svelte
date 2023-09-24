@@ -17,10 +17,9 @@
 		loading = false;
 	}
 
-	// $: if (form?.creditError) {
-	// 	loading = false;
-	// 	creditError = true;
-	// }
+	$: if (data.userData?.credits === 0) {
+		creditError = true;
+	}
 
 	// loading = false when form.image.data is present (image is generated)
 	$: if (form?.image?.data) {
@@ -45,7 +44,12 @@
 			let:config
 			class="container max-w-4xl border w-full p-3 rounded-lg space-y-2 relative"
 		>
-			<Button type="button" class="absolute top-1 right-1" size="sm" variant="secondary">
+			<Button
+				type="button"
+				class="absolute top-1 right-1"
+				size="sm"
+				variant={creditError ? 'destructive' : 'secondary'}
+			>
 				Credits left: {data.userData?.credits}
 			</Button>
 			<Form.Field {config} name="prompt">
@@ -93,6 +97,7 @@
 				<Form.Button
 					variant="secondary"
 					class="w-96 border border-foreground"
+					disabled={loading || creditError}
 					on:click={() => {
 						loading = true;
 					}}
