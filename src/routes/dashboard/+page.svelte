@@ -5,7 +5,6 @@
 	import * as Form from '$lib/components/ui/form';
 	import { Download, ImageIcon, Sparkles, AlertCircle } from 'lucide-svelte';
 	import { imageFormSchema, ImageOptions, ResolutionOptions } from './constants';
-	import { onMount } from 'svelte';
 
 	export let data;
 	export let form;
@@ -46,14 +45,9 @@
 			let:config
 			class="container max-w-4xl border w-full p-3 rounded-lg space-y-2 relative"
 		>
-			<!-- <Button
-				type="button"
-				class="absolute top-1 right-1"
-				size="sm"
-				variant={userData?.credit === 0 ? 'destructive' : 'secondary'}
-			>
-				Credits left: {userData?.credit}
-			</Button> -->
+			<Button type="button" class="absolute top-1 right-1" size="sm" variant="secondary">
+				Credits left: {data.userData?.credits}
+			</Button>
 			<Form.Field {config} name="prompt">
 				<Form.Item>
 					<Form.Label>Prompt</Form.Label>

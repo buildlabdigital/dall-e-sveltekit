@@ -3,6 +3,7 @@ import type { PageServerLoad } from './$types';
 import { superValidate } from 'sveltekit-superforms/server';
 import { imageFormSchema } from './constants';
 import { OPENAI_API_KEY } from '$env/static/private';
+import { db } from '$lib/db.server';
 import OpenAI from 'openai';
 
 const openai = new OpenAI({
@@ -16,8 +17,16 @@ export const load: PageServerLoad = async (event) => {
 		throw redirect(303, `/login?redirectTo=${fromUrl}`);
 	}
 
+
+	const userData = await db.user.findUnique({
+		where: {
+			email: session?.user?.email as string
+		}
+	})
+
 	return {
 		session,
+		userData,
 		form: superValidate(imageFormSchema)
 	};
 };
