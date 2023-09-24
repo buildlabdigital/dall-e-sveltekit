@@ -104,6 +104,8 @@
 				>
 					{#if loading}
 						Generating...
+					{:else if creditError}
+						Not enough credits
 					{:else}
 						Generate
 					{/if}
@@ -115,7 +117,7 @@
 			<div class="container max-w-4xl w-full p-3 rounded-lg space-y-2 mt-12">
 				<Alert.Root variant="destructive">
 					<AlertCircle class="h-4 w-4" />
-					<Alert.Title>Opps! Not enough credits</Alert.Title>
+					<Alert.Title>Oops! Not enough credits</Alert.Title>
 					<Alert.Description
 						>You do not have enough credits to generate an Image. Please consider pusrchasing more
 						credits to continue.</Alert.Description
