@@ -97,15 +97,14 @@
 				<Form.Button
 					variant="secondary"
 					class="w-96 border border-foreground"
-					disabled={loading || creditError}
+					type="submit"
+					disabled={creditError}
 					on:click={() => {
 						loading = true;
 					}}
 				>
 					{#if loading}
 						Generating...
-					{:else if creditError}
-						Not enough credits
 					{:else}
 						Generate
 					{/if}

@@ -26,8 +26,8 @@ export const load: PageServerLoad = async (event) => {
 
 	return {
 		session,
+		form: superValidate(imageFormSchema),
 		userData,
-		form: superValidate(imageFormSchema)
 	};
 };
 
@@ -55,6 +55,19 @@ export const actions: Actions = {
 			n: Number(count),
 			size: convertToImageType(resolution)
 		});
+
+		// decrement user's credits
+		const session = await event.locals.getSession();
+		await db.user.update({
+			where: {
+				email: session?.user?.email as string
+			},
+			data: {
+				credits: {
+					decrement: 1
+				}
+			}
+		})
 		
 		console.log(image.data);
 		return { form, prompt, count, resolution, image };
