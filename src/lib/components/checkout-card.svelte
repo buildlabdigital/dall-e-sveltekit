@@ -2,7 +2,7 @@
 	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import * as Card from '$lib/components/ui/card';
-	import { Coins, IndianRupee, Minus, Plus } from 'lucide-svelte';
+	import { Coins, IndianRupee, Loader2, Minus, Plus } from 'lucide-svelte';
 	import { cn } from '$lib/utils';
 	import { Input } from '$lib/components/ui/input';
 	import axios from 'axios';
@@ -21,16 +21,25 @@
 	export let userData: UserDataType;
 	let credits_to_purchase: number = 10;
 
+	let checkoutLoading = false;
+
 	const blockInvalidChar = (e: KeyboardEvent) =>
 		['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();
 
 	const handleCheckout = async () => {
-		const response = await axios.post('/api/checkout', {
-			userData,
-			credits_to_purchase
-		});
-		// console.log(response);
-		window.location.assign(response.data.url);
+		try {
+			checkoutLoading = true;
+			const response = await axios.post('/api/checkout', {
+				userData,
+				credits_to_purchase
+			});
+			// console.log(response);
+			window.location.assign(response.data.url);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			checkoutLoading = false;
+		}
 	};
 </script>
 
@@ -117,7 +126,12 @@
 					on:click={handleCheckout}
 				>
 					<div class="flex items-center justify-between w-full">
-						<div>Checkout</div>
+						<div class="flex items-center justify-between">
+							{#if checkoutLoading}
+								<Loader2 class="mr-2 animate-spin" />
+							{/if}
+							Checkout
+						</div>
 						<div class="flex items-center gap-1">
 							<IndianRupee size={15} />
 							{costPerCredit * credits_to_purchase}
