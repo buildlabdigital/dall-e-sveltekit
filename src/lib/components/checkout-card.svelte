@@ -67,12 +67,12 @@
 								autofocus={false}
 								on:keydown={blockInvalidChar}
 								on:change={() => {
-									if (credits < 0 || typeof credits !== 'number') {
+									if (credits < 0) {
 										credits = 0;
 									}
 								}}
 								on:mouseleave={() => {
-									if (credits < 0 || typeof credits !== 'number') {
+									if (credits < 0) {
 										credits = 0;
 									}
 								}}
