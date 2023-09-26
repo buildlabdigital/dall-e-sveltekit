@@ -1,6 +1,8 @@
 <script>
 	import { page } from '$app/stores';
 	import { Gallery } from '$lib/components';
+	import { buttonVariants } from '$lib/components/ui/button';
+	import { cn } from '$lib/utils';
 	import { Sparkles } from 'lucide-svelte';
 
 	const images1 = [
@@ -45,6 +47,9 @@
 			Get Started
 			<Sparkles class="ml-2" />
 		</a>
+		<div>
+			<a href="/about" class={cn('-mt-4', buttonVariants({ variant: 'outline' }))}>About</a>
+		</div>
 	</div>
 	<Gallery class="gap-[12px] grid-cols-2 md:grid-cols-4 lg:mb-0 w-auto -mx-2 lg:px-28">
 		<Gallery items={images1} />

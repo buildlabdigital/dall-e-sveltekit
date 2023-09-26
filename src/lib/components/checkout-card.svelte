@@ -17,8 +17,8 @@
 		costPerCredit: number;
 	} | null;
 
-	export let costPerCredit: number;
 	export let userData: UserDataType;
+	let costPerCredit: number = userData?.costPerCredit || 0;
 	let credits_to_purchase: number = 10;
 
 	let checkoutLoading = false;

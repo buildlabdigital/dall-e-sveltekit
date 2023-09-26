@@ -51,7 +51,7 @@
 			<h1 class="text-xl font-bold lg:text-5xl">AI Image Generation</h1>
 		</div>
 		{#if data?.userData}
-			<CheckoutCard costPerCredit={data.userData.costPerCredit} {userData} />
+			<CheckoutCard {userData} />
 		{/if}
 	</div>
 
