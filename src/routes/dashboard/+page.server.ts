@@ -114,5 +114,5 @@ export const actions: Actions = {
 		
 		console.log(image.data);
 		return { form, prompt, count, resolution, image };
-	}
+	},
 };

@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import * as Alert from '$lib/components/ui/alert';
-	import { Card, CardFooter } from '$lib/components/ui/card';
+	import * as Card from '$lib/components/ui/card';
 	import * as Form from '$lib/components/ui/form';
 	import { Download, ImageIcon, Sparkles, AlertCircle } from 'lucide-svelte';
 	import { imageFormSchema, ImageOptions, ResolutionOptions } from './constants';
+	import CheckoutCard from '$lib/components/checkout-card.svelte';
 
 	export let data;
 	export let form;
+
+	let userData = data.userData;
 
 	let loading = false;
 	let zeroCredits = false;
@@ -18,7 +21,7 @@
 	let availableCredits: number;
 
 	// loading = false when form is invalid
-	$: if (!form?.form.valid) {
+	$: if (!form?.form?.valid) {
 		loading = false;
 	}
 
@@ -47,6 +50,9 @@
 			<ImageIcon class="lg:h-14 lg:w-14" />
 			<h1 class="text-xl font-bold lg:text-5xl">AI Image Generation</h1>
 		</div>
+		{#if data?.userData}
+			<CheckoutCard costPerCredit={data.userData.costPerCredit} {userData} />
+		{/if}
 	</div>
 
 	<div class="mt-12 -mx-9">
@@ -164,18 +170,18 @@
 			<div class="flex mb-32">
 				<div class="flex flex-col md:flex-row gap-4 mt-8 lg:px-32">
 					{#each form?.image?.data as src}
-						<Card class="rounded-xl overflow-hidden">
+						<Card.Card class="rounded-xl overflow-hidden">
 							<div class="relative aspect-square">
 								<!-- svelte-ignore a11y-img-redundant-alt -->
 								<img src={src.url} alt="Image" />
 							</div>
-							<CardFooter class="p-2">
+							<Card.CardFooter class="p-2">
 								<Button variant="secondary" class="w-full" on:click={() => window.open(src.url)}>
 									<Download class="h-4 w-4 mr-2" />
 									Download
 								</Button>
-							</CardFooter>
-						</Card>
+							</Card.CardFooter>
+						</Card.Card>
 					{/each}
 				</div>
 			</div>
