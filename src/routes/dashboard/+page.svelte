@@ -10,20 +10,33 @@
 	export let form;
 
 	let loading = false;
-	let creditError = false;
+	let zeroCredits = false;
+
+	// variables for required credits validation
+	let notEnoughCredits = false;
+	let requiredCredits: number;
+	let availableCredits: number;
 
 	// loading = false when form is invalid
 	$: if (!form?.form.valid) {
 		loading = false;
 	}
 
-	$: if (data.userData?.credits === 0) {
-		creditError = true;
+	$: if (data.userData?.credits !== undefined && data.userData.credits <= 0) {
+		zeroCredits = true;
+	}
+
+	$: if (form?.creditsError) {
+		notEnoughCredits = true;
+		loading = false;
+		requiredCredits = form.creditsNeeded;
+		availableCredits = form.availableCredits;
 	}
 
 	// loading = false when form.image.data is present (image is generated)
 	$: if (form?.image?.data) {
 		loading = false;
+		notEnoughCredits = false;
 		window.scrollTo(0, document.body.scrollHeight / 4);
 	}
 </script>
@@ -48,14 +61,19 @@
 				type="button"
 				class="absolute top-1 right-1"
 				size="sm"
-				variant={creditError ? 'destructive' : 'secondary'}
+				variant={zeroCredits ? 'destructive' : 'secondary'}
 			>
 				Credits left: {data.userData?.credits}
 			</Button>
 			<Form.Field {config} name="prompt">
 				<Form.Item>
 					<Form.Label>Prompt</Form.Label>
-					<Form.Input />
+					<Form.Input
+						on:change={() => {
+							loading = false;
+							notEnoughCredits = false;
+						}}
+					/>
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
@@ -64,7 +82,7 @@
 					<Form.Item>
 						<Form.Label>Count</Form.Label>
 						<Form.Select selected={ImageOptions[0]}>
-							<Form.SelectTrigger placeholder="Number of Images" class="text-sm" />
+							<Form.SelectTrigger placeholder="Number of Images" on:click={() => {}} />
 							<Form.SelectContent>
 								{#each ImageOptions as option}
 									<Form.SelectItem value={option.value} disabled={option.diabled}
@@ -80,7 +98,7 @@
 					<Form.Item>
 						<Form.Label>Resolution</Form.Label>
 						<Form.Select selected={ResolutionOptions[0]}>
-							<Form.SelectTrigger placeholder="Image Resolution" />
+							<Form.SelectTrigger placeholder="Image Resolution" on:click={() => {}} />
 							<Form.SelectContent>
 								{#each ResolutionOptions as option}
 									<Form.SelectItem value={option.value} disabled={option.diabled}
@@ -98,7 +116,7 @@
 					variant="secondary"
 					class="w-96 border border-foreground"
 					type="submit"
-					disabled={creditError}
+					disabled={zeroCredits}
 					on:click={() => {
 						loading = true;
 					}}
@@ -112,15 +130,28 @@
 				</Form.Button>
 			</div>
 		</Form.Root>
-		{#if creditError}
+		{#if zeroCredits}
 			<div class="container max-w-4xl w-full p-3 rounded-lg space-y-2 mt-12">
-				<Alert.Root variant="destructive">
-					<AlertCircle class="h-4 w-4" />
-					<Alert.Title>Oops! Not enough credits</Alert.Title>
-					<Alert.Description
+				<Alert.Root variant="destructive" class="ring-red-500">
+					<AlertCircle class="h-4 w-4 dark:text-red-500" />
+					<Alert.Title class="dark:text-red-500">Oops! Not enough credits</Alert.Title>
+					<Alert.Description class="dark:text-red-500"
 						>You do not have enough credits to generate an Image. Please consider pusrchasing more
 						credits to continue.</Alert.Description
 					>
+				</Alert.Root>
+			</div>
+		{/if}
+
+		{#if notEnoughCredits}
+			<div class="container max-w-4xl w-full p-3 rounded-lg space-y-2 mt-12">
+				<Alert.Root variant="destructive" class="ring-red-500">
+					<AlertCircle class="h-4 w-4 dark:text-red-500" />
+					<Alert.Title class="dark:text-red-500">Oops! Not enough credits</Alert.Title>
+					<Alert.Description class="dark:text-red-500"
+						>You do not have enough credits to generate an Image. Your request requires {requiredCredits}
+						credits, but you only have {availableCredits} credits available. Please consider pusrchasing
+					</Alert.Description>
 				</Alert.Root>
 			</div>
 		{/if}

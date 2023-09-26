@@ -6,9 +6,7 @@
 </script>
 
 {#if !$page.data.session}
-	<Button>
-		<a href="/login"> Sign in </a>
-	</Button>
+	<a href="/login" class="buttonClass"> Sign in </a>
 {:else}
 	<Button
 		on:click={() => {
