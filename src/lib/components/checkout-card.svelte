@@ -84,6 +84,10 @@
 									}
 								}}
 							/>
+							<!-- just to hide autofocus on above input element -->
+							<div style="max-width: 0; max-height: 0; overflow: hidden;">
+								<Input autofocus={true} />
+							</div>
 						</div>
 						<div class="text-[0.70rem] uppercase text-muted-foreground mt-1">Credits</div>
 					</div>
