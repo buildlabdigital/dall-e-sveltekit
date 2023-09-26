@@ -5,6 +5,7 @@
 	import { Coins, IndianRupee, Minus, Plus } from 'lucide-svelte';
 	import { cn } from '$lib/utils';
 	import { Input } from '$lib/components/ui/input';
+	import axios from 'axios';
 
 	type UserDataType = {
 		id: string;
@@ -18,14 +19,18 @@
 
 	export let costPerCredit: number;
 	export let userData: UserDataType;
-	let credits: number = 10;
+	let credits_to_purchase: number = 10;
 
 	const blockInvalidChar = (e: KeyboardEvent) =>
 		['e', 'E', '+', '-'].includes(e.key) && e.preventDefault();
 
-	const handleCheckout = () => {
-		console.log('Checkout');
-		console.log(credits, typeof credits, costPerCredit, typeof costPerCredit);
+	const handleCheckout = async () => {
+		const response = await axios.post('/api/checkout', {
+			userData,
+			credits_to_purchase
+		});
+		// console.log(response);
+		window.location.assign(response.data.url);
 	};
 </script>
 
@@ -54,9 +59,9 @@
 						size="icon"
 						class="h-8 w-8 shrink-0 rounded-full"
 						on:click={() => {
-							credits = Number(credits) - 10;
+							credits_to_purchase = Number(credits_to_purchase) - 10;
 						}}
-						disabled={+credits <= 10}
+						disabled={+credits_to_purchase <= 10}
 					>
 						<Minus class="h-4 w-4" />
 						<span class="sr-only">Decrease</span>
@@ -66,21 +71,21 @@
 							<Input
 								type="number"
 								class="w-auto text-center mt-3"
-								bind:value={credits}
+								bind:value={credits_to_purchase}
 								min="0"
-								name="credits"
+								name="credits_to_purchase"
 								autofocus={false}
 								on:keydown={blockInvalidChar}
 								on:change={() => {
-									credits = Number(credits);
-									if (credits < 0) {
-										credits = 0;
+									credits_to_purchase = Number(credits_to_purchase);
+									if (credits_to_purchase < 0) {
+										credits_to_purchase = 0;
 									}
 								}}
 								on:mouseleave={() => {
-									credits = Number(credits);
-									if (credits < 0) {
-										credits = 0;
+									credits_to_purchase = Number(credits_to_purchase);
+									if (credits_to_purchase < 0) {
+										credits_to_purchase = 0;
 									}
 								}}
 							/>
@@ -96,7 +101,7 @@
 						size="icon"
 						class="h-8 w-8 shrink-0 rounded-full"
 						on:click={() => {
-							credits = Number(credits) + 10;
+							credits_to_purchase = Number(credits_to_purchase) + 10;
 						}}
 					>
 						<Plus class="h-4 w-4" />
@@ -105,12 +110,17 @@
 				</div>
 			</Card.Content>
 			<Card.Footer>
-				<Button class="w-full" disabled={credits <= 0} type="submit" on:click={handleCheckout}>
+				<Button
+					class="w-full"
+					disabled={credits_to_purchase <= 0}
+					type="submit"
+					on:click={handleCheckout}
+				>
 					<div class="flex items-center justify-between w-full">
 						<div>Checkout</div>
 						<div class="flex items-center gap-1">
 							<IndianRupee size={15} />
-							{costPerCredit * credits}
+							{costPerCredit * credits_to_purchase}
 						</div>
 					</div>
 				</Button>
