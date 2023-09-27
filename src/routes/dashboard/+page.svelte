@@ -44,6 +44,12 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Dashboard | {userData?.name}</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
+
 <div class="h-full p-8">
 	<div class="flex flex-col items-center justify-center">
 		<div class="flex items-center justify-between gap-4">

@@ -10,6 +10,12 @@
 	import { Github, Linkedin } from 'lucide-svelte';
 </script>
 
+<svelte:head>
+	<title>About | Dall-E Clone</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
+
 <div class="overflow-hidden">
 	<div class="p-3">
 		<div class="text-center text-xl font-bold lg:text-3xl">

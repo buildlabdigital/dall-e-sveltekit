@@ -7,7 +7,7 @@
 
 	const images1 = [
 		{
-			alt: 'shoes',
+			alt: 'A bowl of soup that is also a portal to another dimension, digital art',
 			src: 'A bowl of soup that is also a portal to another dimension, digital art.webp'
 		},
 		{ alt: 'small bag', src: '0_1_384_N.webp' },
@@ -15,26 +15,45 @@
 	];
 	const images2 = [
 		{ alt: 'watch', src: '0_0_384_N_flower.webp', class: 'h-full w-full' },
-		{ alt: 'plants', src: 'A van Gogh style painting of an American football player.webp' },
-		{ alt: 'shoe', src: 'A cyberpunk monster in a control room.webp' }
+		{
+			alt: 'A van Gogh style painting of an American football player',
+			src: 'A van Gogh style painting of an American football player.webp'
+		},
+		{
+			alt: 'A cyberpunk monster in a control room',
+			src: 'A cyberpunk monster in a control room.webp'
+		}
 	];
 	const images3 = [
 		{
-			alt: 'lamp',
+			alt: 'mystical fruits and flowers',
 			src: '0_1_384_N_flowers_fruits.webp'
 		},
 		{ alt: 'cream', src: '0_0_384_N_sky.webp', class: 'h-96 w-full' }
 		// { alt: 'small bag', src: '0_1_384_N_cat.webp', class: '' },
 	];
 	const images4 = [
-		{ alt: 'toiletbag', src: 'A cartoon of a monkey in space.webp', class: 'h-full w-full' },
+		{
+			alt: 'A cartoon of a monkey in space',
+			src: 'A cartoon of a monkey in space.webp',
+			class: 'h-full w-full'
+		},
 		{
 			alt: 'playstation',
 			src: '0_0_384_N.webp'
 		},
-		{ alt: 'bag', src: 'A computer from the 90s in the style of vaporwave.webp' }
+		{
+			alt: 'A computer from the 90s in the style of vaporwave',
+			src: 'A computer from the 90s in the style of vaporwave.webp'
+		}
 	];
 </script>
+
+<svelte:head>
+	<title>Contact | Dall-E Clone</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
 
 <div
 	class="flex flex-col items-center h-full gap-6 lg:flex-row md:justify-center lg:space-y-6 px-6"

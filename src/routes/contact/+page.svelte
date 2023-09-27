@@ -7,6 +7,12 @@
 	import { AtSign, ExternalLink, PhoneCallIcon } from 'lucide-svelte';
 </script>
 
+<svelte:head>
+	<title>Contact | Dall-E Clone</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
+
 <div class="h-full flex items-center justify-center">
 	<Card.Root class="w-[380px]">
 		<Card.Header>
@@ -30,7 +36,10 @@
 				</div>
 				<div class="flex items-center justify-between gap-x-7 w-full">
 					<AtSign class="h-5 w-5" />
-					<a class="flex items-center gap-1 underline-offset-4 hover:underline" href="mailto:prabhukiran426@gmail.com">
+					<a
+						class="flex items-center gap-1 underline-offset-4 hover:underline"
+						href="mailto:prabhukiran426@gmail.com"
+					>
 						prabhukiran426@gmail.com
 						<ExternalLink class="h-3 w-3" />
 					</a>

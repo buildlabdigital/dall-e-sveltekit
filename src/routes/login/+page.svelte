@@ -19,6 +19,12 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Login | Dall-E Clone</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+</svelte:head>
+
 <div class="flex items-center justify-center h-full overflow-x-hidden -mt-12">
 	<Card.Root class="w-[300px] rounded-lg flex flex-col items-center justify-center">
 		<Card.Header>
