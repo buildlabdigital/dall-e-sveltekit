@@ -6,6 +6,6 @@
 	<slot />
 </div>
 
-<div class="p-3">
+<div class="p-3 relative bottom-0">
 	<Footer />
 </div>
