@@ -18,7 +18,7 @@
 				</div>
 				<div>
 					<Avatar.Root>
-						<Avatar.Image src="profile_picture.jpg" alt="@shadcn" />
+						<Avatar.Image src="profile_picture.jpg" alt="@prabhukirankonda" />
 					</Avatar.Root>
 				</div>
 			</div>
