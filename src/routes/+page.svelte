@@ -36,7 +36,9 @@
 	];
 </script>
 
-<div class="flex flex-col items-center h-full gap-6 lg:flex-row md:justify-center lg:space-y-6">
+<div
+	class="flex flex-col items-center h-full gap-6 lg:flex-row md:justify-center lg:space-y-6 px-6"
+>
 	<div class="flex flex-col gap-6 mx-4 mt-10 mb-4 text-center md:mt-28 lg:mt-20 lg:p-20">
 		<h1 class="text-3xl font-extrabold md:text-5xl lg:text-6xl">AI Image Generation</h1>
 		<p>Turn your imagination into awesome pictures</p>

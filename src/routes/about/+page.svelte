@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { Footer } from '$lib/components';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
@@ -21,7 +22,7 @@
 	];
 </script>
 
-<div class="flex items-center justify-center h-full overflow-x-hidden">
+<div class="flex items-center justify-center h-full overflow-x-hidden -mt-6">
 	<Card.Root class="w-[400px]">
 		<Card.Header>
 			<div class="flex items-center justify-between">
@@ -64,4 +65,7 @@
 			<Button class="w-full">Mark all as read</Button>
 		</Card.Footer>
 	</Card.Root>
+</div>
+<div class="absolute bottom-0 w-full p-3">
+	<Footer />
 </div>

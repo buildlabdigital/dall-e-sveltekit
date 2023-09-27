@@ -1,31 +1,56 @@
-<footer class="bg-gray-900 text-white">
-	<div class="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#ffffff19] py-7">
-		<h1
-			class="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold
-         md:w-2/5"
-		>
-			<span class="text-teal-400">Free</span> until you're ready to launch
-		</h1>
+<script>
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import { MenuIcon } from 'lucide-svelte';
+
+	const year = new Date().getFullYear();
+	const footerLinks = [
+		{ name: 'Home', href: '/' },
+		{ name: 'About', href: '/about' },
+		{ name: 'Privacy', href: '/privacy' },
+		{ name: 'Terms', href: '/terms-of-service' }
+	];
+</script>
+
+<div
+	class="relative bottom-0 left-0 right-0 z-50 flex items-center justify-between w-full h-10 max-w-full shadow-sm text-foreground backdrop-opacity-100 backdrop-blur-3xl backdrop-brightness-100 dark:backdrop-brightness-50 bg-foreground/10 rounded-lg"
+>
+	<div class="container flex items-center justify-between w-full px-4 mx-auto max-w-7xl">
 		<div>
-			<input
-				type="text"
-				placeholder="Enter Your ph.no"
-				class="text-gray-800
-           sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
-			/>
-			<button
-				class="bg-teal-400 hover:bg-teal-500 duration-300 px-5 py-2.5 font-[Poppins]
-           rounded-md text-white md:w-auto w-full"
-			>
-				Request Code
-			</button>
+			&copy; {year}{' '} Prabhu Kiran Konda
+		</div>
+		<div class="hidden lg:block">
+			{#each footerLinks as link (link.href)}
+				<a
+					href={link.href}
+					class="px-2 text-sm font-medium transition-colors hover:text-foreground/80"
+				>
+					{link.name}
+				</a>
+			{/each}
+		</div>
+		<div class="lg:hidden">
+			<DropdownMenu.Root>
+				<DropdownMenu.Trigger class="flex items-center justify-center">
+					<MenuIcon class="w-6 h-6" />
+				</DropdownMenu.Trigger>
+				<DropdownMenu.Content>
+					<DropdownMenu.Group>
+						<DropdownMenu.Label>
+							<a href="/" class="w-full">Home</a>
+						</DropdownMenu.Label>
+						<DropdownMenu.Separator />
+						<DropdownMenu.Item>
+							<a href="/about">About</a>
+						</DropdownMenu.Item>
+						<DropdownMenu.Item>
+							<a href="/privacy">Privacy</a>
+						</DropdownMenu.Item>
+						<DropdownMenu.Item>
+							<a href="/terms-of-service">Terms</a>
+						</DropdownMenu.Item>
+					</DropdownMenu.Group>
+				</DropdownMenu.Content>
+			</DropdownMenu.Root>
 		</div>
 	</div>
-	<div
-		class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
-      text-center pt-2 text-gray-400 text-sm pb-8"
-	>
-		<span>© 2020 Appy. All rights reserved.</span>
-		<span>Terms · Privacy Policy</span>
-	</div>
-</footer>
+</div>
