@@ -1,68 +1,50 @@
-# Terms and Conditions
+# Website Terms and Conditions of Use
 
-These **Terms and Conditions** ("Terms") govern your use of the [DALL-E SvelteKit website](https://dall-e-sveltekit.vercel.app) (the "Website"). By accessing or using the Website, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the Website.
+## 1. Terms
 
-## 1. Acceptance of Terms
+By accessing this Website, accessible from [https://dall-e-sveltekit.vercel.app/](https://dall-e-sveltekit.vercel.app/), you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trademark law.
 
-By using the Website, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you are using the Website on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.
+## 2. Use License
 
-## 2. Use of the Service
+Permission is granted to temporarily download one copy of the materials on Dall-E Clone's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
 
-- **AI Image Generation**: The Website provides access to an AI image generation service. Users can generate images on a pay-as-you-go basis. You only pay when you want to use the service and have insufficient credits.
+- modify or copy the materials;
+- use the materials for any commercial purpose or for any public display;
+- attempt to reverse engineer any software contained on Dall-E Clone's Website;
+- remove any copyright or other proprietary notations from the materials; or
+- transfer the materials to another person or "mirror" the materials on any other server.
 
-- **Credits**: The AI image generation service is based on a credit system. Users can earn credits through specified actions or purchase credits through the payment gateway provided by Stripe.
+This will let Dall-E Clone terminate upon violations of any of these restrictions. Upon termination, your viewing right will also be terminated and you should destroy any downloaded materials in your possession whether it is printed or electronic format. These Terms of Service have been created with the help of the [Terms Of Service Generator](https://www.termsofservicegenerator.net).
 
-- **Payment**: When you purchase credits, you agree to pay the specified fees through the Stripe payment gateway. Your use of Stripe is governed by their terms and policies. The Website does not store any credit card information.
+## 3. Disclaimer
 
-## 3. User Registration
+All the materials on Dall-E Clone's Website are provided "as is." Dall-E Clone makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, Dall-E Clone does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website.
 
-- You may be required to create an account to access certain features of the Website. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.
+## 4. Limitations
 
-- You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You must notify us immediately of any unauthorized use of your account.
+Dall-E Clone or its suppliers will not be held accountable for any damages that will arise with the use or inability to use the materials on Dall-E Clone's Website, even if Dall-E Clone or an authorized representative of this Website has been notified, orally or written, of the possibility of such damage. Some jurisdictions do not allow limitations on implied warranties or limitations of liability for incidental damages; these limitations may not apply to you.
 
-## 4. Intellectual Property
+## 5. Revisions and Errata
 
-- **Website Content**: All content on the Website, including but not limited to text, images, graphics, logos, and software, is the property of the Website owner or its licensors and is protected by copyright and other intellectual property laws.
+The materials appearing on Dall-E Clone's Website may include technical, typographical, or photographic errors. Dall-E Clone will not promise that any of the materials in this Website are accurate, complete, or current. Dall-E Clone may change the materials contained on its Website at any time without notice. Dall-E Clone does not make any commitment to update the materials.
 
-- **Generated Images**: Images generated using the AI service are owned by the user who generated them. However, the Website reserves the right to use anonymized, non-identifiable user-generated content for research and development purposes.
+## 6. Links
 
-## 5. Prohibited Activities
+Dall-E Clone has not reviewed all of the sites linked to its Website and is not responsible for the contents of any such linked site. The presence of any link does not imply endorsement by Dall-E Clone of the site. The use of any linked website is at the user's own risk.
 
-You agree not to:
+## 7. Site Terms of Use Modifications
 
-- Use the Website for any unlawful or prohibited purpose.
+Dall-E Clone may revise these Terms of Use for its Website at any time without prior notice. By using this Website, you are agreeing to be bound by the current version of these Terms and Conditions of Use.
 
-- Attempt to gain unauthorized access to any part of the Website or any user accounts.
+## 8. Your Privacy
 
-- Upload, post, or transmit any content that is offensive, harmful, or violates the rights of others.
+Please read our [Privacy Policy](#).
 
-- Attempt to reverse engineer, decompile, or disassemble any part of the Website.
+## 9. Governing Law
 
-## 6. Privacy Policy
+Any claim related to Dall-E Clone's Website shall be governed by the laws of [your jurisdiction] without regards to its conflict of law provisions.
 
-Our [Privacy Policy](/privacy) outlines how we collect, use, and protect your personal information. By using the Website, you consent to the collection and use of your information as described in the Privacy Policy.
-
-## 7. Disclaimer of Warranties
-
-The Website and its AI image generation service are provided "as is" and "as available." We make no warranties, express or implied, regarding the accuracy, reliability, or suitability of the service for your purposes.
-
-## 8. Limitation of Liability
-
-We are not liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use of the Website, even if we have been advised of the possibility of such damages.
-
-## 9. Termination
-
-We reserve the right to terminate or suspend your access to the Website, at our sole discretion, without notice, for any reason, including but not limited to a breach of these Terms.
-
-## 10. Changes to Terms
-
-We may update these Terms from time to time, and any changes will be effective upon posting on the Website. It is your responsibility to review these Terms periodically.
-
-## 11. Governing Law
-
-These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law principles.
-
-## 12. Contact Information
+## 10. Contact Information
 
 If you have any questions or concerns about these Terms or the Website, please contact us at [prabhukiran426@gmail.com](mailto:prabhukiran426@gmail.com).
 
