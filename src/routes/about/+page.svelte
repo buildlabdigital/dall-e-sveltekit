@@ -14,6 +14,13 @@
 	<title>About | Dall-E Clone</title>
 	<meta name="robots" content="noindex nofollow" />
 	<html lang="en" />
+	<meta
+		property="og:title"
+		content="AI Image Generation | Buit by Prabhu Kiran Konda | SvelteKit"
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="home.png" />
+	<meta property="og:url" content="https://dall-e-sveltekit.vercel.app" />
 </svelte:head>
 
 <div class="overflow-hidden">
