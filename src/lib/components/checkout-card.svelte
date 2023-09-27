@@ -112,6 +112,7 @@
 						on:click={() => {
 							credits_to_purchase = Number(credits_to_purchase) + 10;
 						}}
+						disabled={+credits_to_purchase >= 50}
 					>
 						<Plus class="h-4 w-4" />
 						<span class="sr-only">Increase</span>
