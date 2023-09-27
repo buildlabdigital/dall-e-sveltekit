@@ -5,7 +5,7 @@
 	import { AuthButton, DarkMode } from '$lib/components';
 
 	const links = [
-		{ name: 'Profile', href: '/profile' },
+		// { name: 'Profile', href: '/profile' },
 		{ name: 'Dashboard', href: '/dashboard' },
 		{ name: 'About', href: '/about' }
 	];
