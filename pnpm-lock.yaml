@@ -35,6 +35,9 @@ dependencies:
   stripe:
     specifier: ^13.7.0
     version: 13.7.0
+  svelte-meta-tags:
+    specifier: ^3.0.4
+    version: 3.0.4(svelte@4.2.1)(typescript@5.2.2)
   sveltekit-superforms:
     specifier: ^1.7.1
     version: 1.7.1(@sveltejs/kit@1.25.0)(svelte@4.2.1)(zod@3.22.2)
@@ -2443,6 +2446,14 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
+  /schema-dts@1.1.2(typescript@5.2.2):
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 5.2.2
+    dev: false
+
   /semver@7.5.4:
     resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
@@ -2624,6 +2635,17 @@ packages:
       svelte: ^3.19.0 || ^4.0.0
     dependencies:
       svelte: 4.2.1
+
+  /svelte-meta-tags@3.0.4(svelte@4.2.1)(typescript@5.2.2):
+    resolution: {integrity: sha512-L2oYFoJM5HVy1nFsWf1xr+Ws8yV3Vh1OLDUYJ14Ygl/3SkwMlWS2CwgNmOAJWAZMWLfFH1v3ik9eVcbwrnURGw==}
+    peerDependencies:
+      svelte: ^3.55.0 || ^4.0.0
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.2.2)
+      svelte: 4.2.1
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /svelte-preprocess@5.0.4(postcss-load-config@4.0.1)(postcss@8.4.30)(svelte@4.2.1)(typescript@5.2.2):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
@@ -2818,7 +2840,6 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /undici@5.23.0:
     resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}

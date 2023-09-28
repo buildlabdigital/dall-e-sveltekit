@@ -4,6 +4,7 @@
 	import { buttonVariants } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils';
 	import { Sparkles } from 'lucide-svelte';
+	import { MetaTags } from 'svelte-meta-tags';
 
 	const images1 = [
 		{
@@ -49,18 +50,35 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Dall-E Clone | Buit by Prabhu Kiran Konda | SvelteKit</title>
-	<meta name="robots" content="noindex nofollow" />
-	<html lang="en" />
-	<meta
-		property="og:title"
-		content="AI Image Generation | Buit by Prabhu Kiran Konda | SvelteKit"
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="home.png" />
-	<meta property="og:url" content="https://dall-e-sveltekit.vercel.app" />
-</svelte:head>
+<MetaTags
+	title="Dall-E Clone | Built by Prabhu Kiran Konda | SvelteKit"
+	description="Dall-E Clone built by Prabhu Kiran Konda using SvelteKit"
+	openGraph={{
+		title: 'Dall-E Clone',
+		description: 'Dall-E Clone built by Prabhu Kiran Konda using SvelteKit',
+		images: [
+			{
+				url: 'https://www.example.ie/og-image-01.jpg',
+				width: 800,
+				height: 600,
+				alt: 'Og Image Alt'
+			}
+		],
+		siteName: 'Dall-E Clone'
+	}}
+	twitter={{
+		handle: '@prabhukirantwt',
+		site: '@dall-e-clone',
+		cardType: 'summary_large_image',
+		title: 'Using More of Config',
+		description: 'Dall-E Clone built by Prabhu Kiran Konda using SvelteKit',
+		image: 'https://www.example.ie/twitter-image.jpg',
+		imageAlt: 'Twitter image alt'
+	}}
+	facebook={{
+		appId: '1234567890'
+	}}
+/>
 
 <div
 	class="flex flex-col items-center h-full gap-6 lg:flex-row md:justify-center lg:space-y-6 px-6"
