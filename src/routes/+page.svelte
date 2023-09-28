@@ -58,7 +58,7 @@
 		description: 'Dall-E Clone built by Prabhu Kiran Konda using SvelteKit',
 		images: [
 			{
-				url: 'https://www.example.ie/og-image-01.jpg',
+				url: 'https://raw.githubusercontent.com/PrabhuKiran8790/dall-e-sveltekit/main/static/home-min.png',
 				width: 800,
 				height: 600,
 				alt: 'Og Image Alt'
@@ -70,13 +70,11 @@
 		handle: '@prabhukirantwt',
 		site: '@dall-e-clone',
 		cardType: 'summary_large_image',
-		title: 'Using More of Config',
+		title: 'Dall-E Clone',
 		description: 'Dall-E Clone built by Prabhu Kiran Konda using SvelteKit',
-		image: 'https://www.example.ie/twitter-image.jpg',
+		image:
+			'https://raw.githubusercontent.com/PrabhuKiran8790/dall-e-sveltekit/main/static/home-min.png',
 		imageAlt: 'Twitter image alt'
-	}}
-	facebook={{
-		appId: '1234567890'
 	}}
 />
 
