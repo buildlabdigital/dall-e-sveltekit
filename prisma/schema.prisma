@@ -48,7 +48,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  credits       Int       @default(0)
+  credits       Int       @default(5)
   costPerCredit Float     @default(0.5)
 }
 
